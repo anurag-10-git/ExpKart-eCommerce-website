@@ -1,0 +1,124 @@
+
+html {
+    font-size: 62.5%; 
+}
+
+.all-products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    gap: 3rem;
+    padding: 5rem 7.4rem; 
+    justify-content:flex-start;       
+}
+
+form {
+    height: 100%;
+    width: 100%;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 0.3rem;
+}
+
+.button-container a {
+    color: #444;
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 0.46rem 1.2rem;
+}
+ 
+.btn {
+    width: 100%;
+    background-color:rgb(255, 213, 0);
+    border: .1rem solid rgb(255, 149, 0);
+    padding: 0.6rem 1.2rem;
+    border-radius: .3rem;
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    color: #444;
+    font-weight:600;
+    cursor: pointer;
+}
+
+.product-container {
+  display: flex;
+  border: .1rem solid rgba(255, 179, 0, 0.84);
+  box-shadow: 0 0 .3rem rgba(34, 34, 34, 0.619);
+  flex-direction: column;
+  width: 25.5rem;
+  padding: 0.8rem 1rem;
+  border-radius: .5rem;
+  transition: transform 0.3s ease;
+}
+
+.product-container:hover {
+  transform: scale(1.08);
+}
+
+.product-container .image-container {
+   
+}
+
+.product-container img {
+    max-height: 20rem;
+    width: 100%;
+    border: .1rem solid rgba(255, 179, 0, 0.84);
+    box-shadow: 0 0 .2rem rgba(68, 68, 68, 0.845);
+    transition: transform 0.1s ease;
+}
+
+
+.product-container img:hover {
+    transform: scale(1.01);
+}
+
+.content h1 a {
+    display: block !important;
+    font-size: 2.3rem;
+    color:  rgba(236, 166, 0, 0.993);
+    display: flex;
+     justify-content: space-between;
+     align-items: baseline;
+     overflow: hidden;
+     white-space: nowrap;
+     text-overflow: ellipsis;
+     text-transform: capitalize;
+     transition: transform 0.1s ease;
+    }
+
+    .content h1 a:hover {
+        text-decoration: underline;
+        color:  rgba(245, 172, 1, 0.941);
+        transform: scale(1.01);
+    }
+
+.content span {
+    color: #333;
+    display: inline-block;
+    font-size: 2rem;
+    padding: 0.2rem 0  0.7rem;
+    margin-left: 0.1rem;
+    font-weight: 600;
+}
+
+.content p {
+    font-size: 1.3rem;
+    color: rgb(71, 71, 71);
+    padding: 0 .3rem;
+}
+
+
+@media (max-width: 650px) {
+    .product-container {
+        flex-direction: column;
+        width: 100%;
+        margin: 0 3.5rem;
+      }
+
+}
+

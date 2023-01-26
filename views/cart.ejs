@@ -1,0 +1,40 @@
+<%-include('./includes/meta-tags.ejs')%>
+<link rel="stylesheet" href="/cart.css">
+</head>
+<body>
+    <%- include('includes/header.ejs') %>
+    <section class="cart">
+        <% if(products.length > 0) { %>
+        <main class="cart-lists">
+        <% for(let product of products) {%>    
+        <div class="cart-list">
+           <img src="/<%= product.productId.imageUrl %>" alt="">
+           <div class="cart-list__details">
+               <h3><%=product.productId.name%></h3>
+                <span>size: S</span>
+            </div>
+            <div class="cart-list__cost">
+               <span>quantity: <%=product.quantity %></span>
+               <span>price: $<%=product.totalPrice%></span>
+               <form action="/remove-cart-item" method="post">
+                    <input type="hidden" value="<%= csrfToken %>" name="_csrf">
+                    <input type="hidden" name="productId" value="<%= product.productId._id %>">
+                   <button type="submit" class="btn">remove</button>
+               </form>
+           </div>
+        </div>
+          <% } %>
+        </main>
+        <aside class="bill-detail">
+          <!-- <form action="/create-order" method="post">
+            <input type="hidden" value="<%= csrfToken %>" name="_csrf">
+            <button type="submit" class="btn">place order</button>
+          </form> -->
+          <a class="btn" href="/checkout">Buy Now</a>
+        </aside>
+        <% }else { %>
+            <h1>Cart is empty!</h1>
+            <%}%>
+    </section>
+</body>    
+</html>

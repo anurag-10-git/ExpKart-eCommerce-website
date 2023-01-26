@@ -1,0 +1,116 @@
+.form-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 3rem 0 ;
+}
+
+.add-pro-form { 
+    margin-top: 2rem;
+    padding: 3rem 2rem;
+    padding-top: 1rem;
+    z-index: 40;
+}
+
+.common-design {
+    box-shadow: 0 0 .2rem rgba(0, 0, 0, 0.7);
+    border-radius: .5rem;
+}
+
+.btn {
+    width: 100%;
+    background-color:rgb(255, 213, 0);
+    border: .1rem solid rgb(255, 149, 0);
+    padding: 0.6rem 1.2rem;
+    border-radius: .3rem;
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.form-container.login-form__container{
+    height: 70vh;
+}
+
+.form-container h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 2.4rem;
+    color: #333;
+}
+
+.form-container p {
+    color: #444;  
+    margin-top: 1.4rem;
+    margin-left: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.form-container p a,
+.form-container p a:visited {
+    text-decoration: underline;
+    color: blue;
+}
+
+.add-pro-form div {
+    padding: 1rem;
+}
+
+.add-pro-form div input {
+    width: 100%;
+    border: .2rem solid rgb(255, 213, 0);
+    padding: .2rem;
+    border-radius: .3rem;
+}
+
+.add-pro-form div input:focus,
+textarea:focus {
+    border: .2rem solid rgb(255, 149, 0);
+    outline: none;
+}
+
+.add-pro-form div label {
+    font-size: 1.6rem;
+}
+
+textarea {
+    width: 100%;
+    border: .2rem solid rgb(255, 213, 0);
+    padding: .2rem;
+    resize: none;
+    border-radius: .3rem;
+}
+
+.edit-products-box {
+    margin-top: 1rem; 
+}
+
+.edit-products-box a {
+    font-size: 1.4rem;
+    color: blue;
+    text-decoration: underline;
+}
+
+.login-form {
+    padding-bottom: 2.6rem;
+}
+
+.signup-btn {
+   background-color: rgb(255, 213, 0);
+   margin-top: 1rem;
+   text-align: center;
+   border: 2px solid rgb(255, 196, 0);
+   font-size: 1.2rem;
+   font-weight: 600;
+   cursor: pointer;
+   color: #333;
+}
+
+.add-pro-form input.invalid,
+.add-pro-form textarea.invalid{
+    border-color: #ff0000ad !important;
+}
+
+
+

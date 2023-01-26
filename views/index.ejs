@@ -1,0 +1,45 @@
+<%- include('includes/meta-tags.ejs') %>
+<link rel="stylesheet" href="/product.css">
+</head>
+<body>
+    <%- include('includes/header.ejs') %>
+    <main>
+        <% if(prods.length > 0) { %>
+        <div class="all-products">
+            <% for (let product of prods){ %>
+
+            <div class="product-container">
+               
+                    <img src="/<%= product.imageUrl %>" alt="">
+    
+                <div class="content">
+                    <h1><a href="/product/<%=product._id%>"><%= product.name %></a> </h1>
+                    <span>₹<%= product.price %> </span>
+                    <p><%= product.description %></p>
+                </div> 
+                 <%- include('includes/add-to-cart.ejs',{product: product}) %>
+            </div>
+            <% } %>
+        </div>
+        <section class="pagination">
+           <!-- <% if(currentPage !== 1 && previousPage !== 1) { %><a href="/?page=1">1</a><% } %> -->
+           <!-- <% if(hasPreviousPage) { %>
+            <a href="/?page=<%= previousPage %>"><%= previousPage %></a>
+            <% } %> -->
+            <!-- <a href="/?page=<%= currentPage %>"><%= currentPage %></a>
+            <% if(hasNextPage) { %>
+            <a href="/?page=<%= nextPage %>"><%= nextPage %></a>
+            <% } %> -->
+            <%for(let i = 1; i <= lastPage ; i++){ %>
+                <a class="<%= currentPage === i ? 'active':'' %>" href="/?page=<%= i %>"><%= i %></a>
+            <%}%>    
+            <!-- <% if(lastPage !== currentPage && lastPage !== nextPage) { %>
+            <a href="/?page=<%= lastPage %>"><%= lastPage %></a>
+            <%}%> -->
+        </section>
+        <% } else { %>
+          <h1>No Product Found!</h1>
+          <% } %>
+    </main>
+</body>
+</html>

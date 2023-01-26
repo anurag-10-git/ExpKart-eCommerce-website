@@ -1,0 +1,36 @@
+<%- include('includes/meta-tags.ejs') %>
+<link rel="stylesheet" href="/product.css">
+</head>
+<body>
+    <%- include('includes/header.ejs') %>
+    <main>
+        <% if(prods.length > 0) { %>
+        <div class="all-products">
+             <% for(let product of prods) { %>
+
+            <article class="product-container">              
+                    <img src="/<%= product.imageUrl %>" alt="">
+    
+                <div class="content">
+                    <h1><a href="/product/<%=product._id%>"><%= product.name %></a> </h1>
+                    <span>$<%= product.price %> </span>
+                    <p><%= product.description %></p>
+                </div>
+                <div class="button-container">
+                    <a class="btn" href="/admin/edit-product/<%=product._id%>?edit=true">edit</a>
+
+                        <input type="hidden" value="<%= csrfToken %>" name="_csrf">
+                        <input type="hidden" value="<%= product._id %>" name="productId">
+                        <button class="btn" type="button" onclick="deleteProduct(this)">delete</button>
+        
+               </div>  
+            </article>
+            <% } %>
+        </div>
+        <% } else { %>
+          <h1>No Product Found!</h1>
+          <% } %>
+    </main>
+    <script src="/js/admin.js"></script>
+</body>
+</html>

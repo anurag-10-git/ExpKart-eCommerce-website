@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; 
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    /* position: relative; */
+    position: relative;
+    width: 100%;
+    color: #444;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+a:visited {
+    color: #444;
+}
+
+/* .header { 
+  
+} */
+
+.navbar {
+    top: 0;
+    left: 0;
+    position: sticky;
+    /* max-width: 100%; */
+    display: flex;
+    justify-content:space-between;
+    padding:2.5rem 3.2rem 2.5rem 2.5rem;
+    align-items: center;
+    background-color: rgb(255, 213, 0);
+    border-bottom: 0.1rem solid  rgba(255, 179, 0, 0.84) ;
+    box-shadow: 0 0.1rem 1rem rgba(53, 53, 53, 0.477);
+    z-index: 100000;
+}
+
+.search-form{
+    width: 40vw;
+    display: flex;
+    background: white;
+    padding: .2rem 1rem;
+    padding-right: 0.5rem;
+    border-radius: 2px;
+}
+
+#search {
+    width:100%;
+    border: none;
+    padding: 0.4rem;
+}
+
+#search:focus {
+    outline: none;
+}
+
+#search+button {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+button img {
+   height: 3rem;
+   filter: grayscale(60%);
+}
+
+.navbar ul {
+    display: flex;
+    position: relative;
+    list-style: none;
+    column-gap: 1.5rem;
+    font-size: 1.7rem;
+    color: #333;
+    align-items: center;
+}
+
+.navbar ul li {
+    
+    cursor: pointer;
+}
+
+.navbar ul li a {
+    font-weight: 500;
+    color: #333;
+}
+
+.navbar ul li a:hover {
+    color: rgba(72, 72, 72, 0.735); 
+}
+
+.navbar ul li a:active {
+    color: rgba(72, 72, 72, 0.735); 
+}
+
+.login {
+    background-color: #bb193e;
+    padding: .5rem 1rem;
+    margin-left: 1rem;
+    border-radius: 3px;
+}
+
+.login a{
+    color: white!important;
+}
+
+.logout{
+    font-size: 1.6rem;
+    background-color: #bb193e;
+    padding: .7rem 1rem;
+    margin-left: 1rem;
+    border-radius: 3px;
+    cursor: pointer;
+    color: white!important;
+    border: none;
+}
+
+.btn {
+    width: 100%;
+    background-color:rgb(255, 213, 0);
+    border: .1rem solid rgb(255, 149, 0);
+    padding: 0.6rem 1.2rem;
+    border-radius: .3rem;
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    color: #444;
+    font-weight:600;
+    cursor: pointer;
+}
+
+
+
+.navbar span {
+    font-size: 2.5rem;
+}
+
+.logo-text {
+    color:#222;
+}
+
+.logout-form {
+    width: auto;
+}
+
+.signup-box {
+    display: none;
+    font-size: 1.4rem;
+    background: white;
+    border-radius: 0.5rem;
+    padding: 2rem 1.8rem;
+    position: absolute;
+    top: 4.5rem;
+    right: 0rem;
+    box-shadow: 0 1px 2px rgba(51, 51, 51, 0.411);
+}
+
+.signup-box::before{
+    content: '';
+    top: -10px;
+    right: 10px;
+    position: absolute;
+    border-top:none;
+    border-right:10px solid transparent;
+    border-left:10px solid transparent ;
+    border-bottom: 10px solid white;
+}
+
+.signup-box p {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    row-gap: 0.4rem;
+}
+
+.signup-box p a {
+    color: #333;
+    background: rgb(255, 149, 0);
+    padding: 0.5rem 1.2rem;
+    box-shadow: 0 0 2px rgba(51, 51, 51, 0.566);
+}
+
+.signup-box p span{
+    font-size: 1.4rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.infoMessage {
+    font-size: 1.3rem;
+    text-align: center;
+    width: 35%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    padding: 1rem 2rem;
+    background-color: rgba(0, 255, 55, 0.212);
+    color: rgb(43, 172, 60);
+    border: 1px solid rgb(43, 172, 60);
+    border-radius: .3rem;
+}
+
+.errorMessage {
+    background-color: #ff000030;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0;
+    padding-bottom: 5rem;
+    border-top: 1px solid rgba(153, 153, 153, 0.557);
+    
+    
+}
+
+.pagination a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.4rem;
+     width: 3.4rem;
+    border: 1px solid rgb(255, 149, 0);
+    box-shadow: 0 0 1px rgba(68, 68, 68, 0.562);
+    margin: 0 1rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-radius: 50%;
+    transition: background-color .2s ease, transform .1s ease;
+}
+
+.pagination a:hover,
+.pagination a:active {
+    background-color: rgb(255, 213, 0);
+    transform: scale(1.08);
+}
+
+.pagination a.active {
+   background-color: rgb(255, 149, 0);
+   /* box-shadow: 0 0 2px rgb(68, 68, 68); */
+   transform: scale(1.08);
+   color: white;
+}
+
+@media (max-width: 1250px){
+    html {
+        font-size: 57%;
+    }
+}
+
+@media (max-width: 650px) {
+   html {
+    font-size: 50%;
+   }
+
+   .navbar {
+    flex-direction: column;
+    row-gap: 2.5rem;
+   }
+
+   .all-products {
+    padding: 3rem 4rem !important;
+   }
+}
+
+@media (max-width: 430px) {
+    html {
+        font-size: 45%;
+    }
+}

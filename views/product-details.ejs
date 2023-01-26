@@ -1,0 +1,30 @@
+<%- include('includes/meta-tags.ejs')%>
+<link rel="stylesheet" href="/product-detail.css">
+</head>
+<body>
+    <%- include('includes/header.ejs') %>
+<div class="grid-container">
+    <img src="/<%= product.imageUrl %>" alt="">
+    <div class="product-detail-box">
+        <h1><%= product.name %></h1>
+        <p class="description"><%= product.description %></p>
+        <div class="colors">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <span class="price">$<%= product.price %></span>
+        <div class="button-container">
+            <form action="/add-to-cart" method="post">
+                <input type="hidden" value="<%= csrfToken %>" name="_csrf">
+                <input type="hidden" name="productId" value="<%= product._id %>">
+                <button class="btn" type="submit"> add to cart</button>
+            </form> 
+            <a class="btn" href="/">Back to Shopping →</a>
+        </div>
+     </div>
+</div>
+    
+      
+</body>

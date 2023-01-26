@@ -1,0 +1,29 @@
+<%- include('includes/meta-tags.ejs') %>
+ <link rel="stylesheet" href="/form.css">
+</head>
+<body>
+    <%- include('includes/header.ejs') %>
+    <main class="form-container login-form__container">
+        <% if(errorMessage){ %>
+            <div class="infoMessage errorMessage"><%= errorMessage %></div>
+            <% } %>
+        <form class="add-pro-form signup login-form common-design" action="/signup" method="POST" novalidate>
+            <div class="input-container">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" class="<%= validationErrors.find(e => e.param === 'email') ? 'invalid' : '' %>" value="<%= oldInput.email %>">
+            </div>
+            <div class="input-container">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" class="<%= validationErrors.find(e => e.param === 'password') ? 'invalid' : '' %>" value="<%= oldInput.password %>">
+            </div>
+            <div class="input-container">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" name="confirmPassword" id="confirmPassword" class="<%= validationErrors.find(e => e.param === 'confirmPassword') ? 'invalid' : '' %>" >
+            </div>
+            <button class="btn" type="submit">Sign up</button>
+            <input type="hidden" value="<%= csrfToken %>" name="_csrf">
+            <p>Aleady have account? <a href="/login">login</a></p>
+        </form>
+    </main> 
+</body>
+</html>

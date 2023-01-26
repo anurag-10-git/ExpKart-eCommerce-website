@@ -1,0 +1,22 @@
+<%-include('./includes/meta-tags.ejs')%>
+<link rel="stylesheet" href="/orders.css">
+</head>
+<body>
+    <%- include('includes/header.ejs') %>
+    <h1 class="order-heading">Your orders!</h1>
+    <% if(orders.length > 0){ %>
+    <div class="orders-container">
+        <% for(let order of orders){ %>
+        <div class="orders-list">
+            <h3>order: #<%=order._id%> - <a href="/orders/<%= order._id %>" target="_blank">Invoice</a></h3>
+            <% for(let product of order.products){ %>
+            <span><%=product.product.name%>(<%=product.quantity%>)  --------  $<%=product.totalPrice%></span>
+            <%}%>
+        </div>
+        <%}%>
+    </div>
+    <% } else {%>
+        <h1 class="no-orders">🙁no orders!</h1>
+        <%}%>
+</body>    
+</html>    
